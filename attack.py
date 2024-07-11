@@ -7,8 +7,8 @@ from tqdm import tqdm
 import qianfan
 import requests
 import json
-os.environ["QIANFAN_ACCESS_KEY"] = "ALTAKCTIeA2uEd4DfIWxXypzuC"
-os.environ["QIANFAN_SECRET_KEY"] = "6fb99576e08343bf9554ab2b4322d741"
+os.environ["QIANFAN_ACCESS_KEY"] = ""
+os.environ["QIANFAN_SECRET_KEY"] = ""
 chat_comp = qianfan.ChatCompletion()
 attack_Data = pd.read_csv('harmful_behaviors.csv').head(100)
 #multilanguage sandwich
@@ -65,7 +65,7 @@ def translation(translate_text):
 
 def get_access_token():
     url = "https://aip.baidubce.com/oauth/2.0/token"
-    params = {"grant_type": "client_credentials", "client_id": "nbUZdYB5oOKJjmZvpmzimt6F", "client_secret": "gaIRpzoDx2IBKtMVxwmWH8bLFko8zbmf"}
+    params = {"grant_type": "client_credentials", "client_id": "", "client_secret": ""}
     return str(requests.post(url, params=params).json().get("access_token"))
 
 
