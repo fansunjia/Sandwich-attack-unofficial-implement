@@ -32,7 +32,7 @@ def get_access_token():
     :return: access_token，或是None(如果错误)
     """
     url = "https://aip.baidubce.com/oauth/2.0/token"
-    params = {"grant_type": "client_credentials", "client_id": "nbUZdYB5oOKJjmZvpmzimt6F", "client_secret": "gaIRpzoDx2IBKtMVxwmWH8bLFko8zbmf"}
+    params = {"grant_type": "client_credentials", "client_id": "", "client_secret": ""}
     return str(requests.post(url, params=params).json().get("access_token"))
 
 
