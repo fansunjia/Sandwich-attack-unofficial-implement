@@ -184,6 +184,7 @@ def evaluate(results):
 def get_completion(prompt):
     headers = {'Content-Type': 'application/json'}
     data = {"prompt": prompt}
+    #Qwen1.5部署地址
     response = requests.post(url='http://localhost:6006', headers=headers, data=json.dumps(data))
     return response.json()['response']
 
@@ -192,6 +193,7 @@ answers = []
 LLM_evaluates = []
 for index,data in tqdm(attack_Data.iterrows()):
     print(index,data[0])
+    #在此处可更换prompt模版
     prompt = prompt_template.format(dangerous_question=translation(data[0]))
     #translation the prompt to the certain language
     #prompt_trans = translation(prompt)
@@ -220,6 +222,7 @@ for index,data in tqdm(attack_Data.iterrows()):
         continue
 evaluate(answers)
 
+#修改此处文件路径以将结果保存到不同文件中
 with open('output/output_Qwen_1.5.txt', 'w', encoding='utf-8') as f:
     for question,item in answers_map.items():
         f.write(question + ':\n')
