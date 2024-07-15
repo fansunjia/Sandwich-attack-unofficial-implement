@@ -8,7 +8,8 @@
 ## 📊Advbench📊
 
 ## usage:
-1, deploy Qwen1.5  
+1, deploy Qwen1.5 
+
 2, change your Qwen1.5 url, select a prompt template and the output path in attack.py  
 
 3, run python attack.py to get the results  
